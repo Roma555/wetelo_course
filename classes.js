@@ -1,4 +1,4 @@
-<script>
+// <script>
 class Square{
     constructor(wight,height) {
         this.wight = wight;
@@ -63,4 +63,4 @@ area.addFigure(circle1);
 //area.clear();
 //console.log(area._figures);
 console.log("Size:", area.size);
-</script>
+// </script>

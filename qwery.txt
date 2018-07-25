@@ -1,0 +1,11 @@
+- немає розмірів
+- один з розмірів рівний NULL
+- ознайомитись з фільтром $regex назва починається з 'D' або 'M' і товари є в наявності 
+- категорія "Vo" і ширина більше 50 
+- назва товару мітить "i" довжина менше 200
+
+- {"sizes": []}
+- {$or: [ { "sizes": {$elemMatch: { "weight": null } } } , { "sizes": {$elemMatch: { "length": null } } } ] }
+- {$or:[{name: {$regex: /^D/}},{name: {$regex: /^M/}}]}
+- {$and:[ { category: {$regex: "^Vo"} }, {sizes: {$elemMatch: {"weight":{ $gt: 50} } } } ] }
+- {$and:[{ name: {$regex: "i"} }, {name: {$regex: "^\s*([^\s]\s*){0,200}$"} } ] }
